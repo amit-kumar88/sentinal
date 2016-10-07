@@ -28,7 +28,7 @@ sudo: false
 notifications:
     on_success: never
     on_failure: always
-    env:- DB=pgsql
-        - APP_ENV=testing
-        - APP_DEBUG=true
-        - APP_KEY=lEJl3EPdPaXthdJvLE6sJFUIpYO1hHe0
+    env: - DB=pgsql
+         - APP_ENV=testing
+         - APP_DEBUG=true
+         - APP_KEY=lEJl3EPdPaXthdJvLE6sJFUIpYO1hHe0
