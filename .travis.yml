@@ -1,14 +1,19 @@
 before_script:
   - "composer self-update"
   - "composer install --prefer-source --no-interaction --dev"
+  - "psql -c 'create database travis_ci_test;' -U postgres"
+  - "psql -U postgres -c \"create extension postgis\""
 language: php
 matrix:
   ? "allow_failures:- php"
   : 5.5
   fast_finish: true
 notifications:
+  ? "addons:postgresql"
+  : "9.5"
   on_failure: always
   on_success: never
+  services: postgresql
 php:
   - 5.5
   - 5.6
