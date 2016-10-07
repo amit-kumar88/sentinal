@@ -21,12 +21,8 @@ script: vendor/bin/phpunit
 
 # allow_failures: Allow this build to fail under the specified environments.
 # fast_finish: If your build fails do not continue trying to build, just stop.
-matrix:
-  allow_failures:
-    - php: 5.5
-   fast_finish: true
 
-  sudo: false
+sudo: false
 
 # Customize when the notification emails are sent.
 notifications:
