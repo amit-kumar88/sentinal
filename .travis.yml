@@ -7,10 +7,10 @@ matrix:
   : 5.5
   fast_finish: true
 notifications:
-  env: "DB=pgsql - APP_ENV=testing - APP_DEBUG=true - APP_KEY=lEJl3EPdPaXthdJvLE6sJFUIpYO1hHe0"
   on_failure: always
   on_success: never
 php:
   - 5.5
   - 5.6
+script: vendor/bin/phpunit
 sudo: false
