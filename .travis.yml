@@ -1,10 +1,10 @@
-before_script:
+before_script: 
   - "composer self-update"
   - "composer install --prefer-source --no-interaction --dev"
   - "psql -c 'create database travis_ci_test;' -U postgres"
   - "psql -U postgres -c \"create extension postgis\""
 install:
-  - travis/install-nginx
+  - "bash ci/travis/nginx/install-nginx.sh - bash ci/travis/install.sh"
 language: php
 matrix:
   ? "allow_failures:- php"
@@ -17,6 +17,7 @@ notifications:
   on_success: never
   packages:
     - nginx
+    - realpath
   services: postgresql
 php:
   - 5.5
